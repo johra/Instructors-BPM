@@ -1,0 +1,8 @@
+<!ENTITY prefwindow.title "Instructors preferences">
+<!ENTITY pane1.title "Instructors preferences">
+<!ENTITY bpmrangepref.label "BPM range plus minus">
+<!ENTITY fadeuppref.label "Fade up time">
+<!ENTITY fadedownpref.label "Fade down time">
+<!ENTITY fadetimepref.label "Fade time">
+<!ENTITY fastforwardtimepref.label "Fast Forward time">
+<!ENTITY minimumtrackspref.label "Minimum tracks to play">

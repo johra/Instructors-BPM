@@ -1,0 +1,18 @@
+<!ENTITY instructors.helloworld.label "Visa musik-information">
+<!ENTITY instructors.helloworld.accesskey "H">
+<!ENTITY instructors.pane.label "Visa musik-information...">
+<!ENTITY instructors.pane.button "Starta">
+<!ENTITY instructors.musicinfo.button.up "Mer">
+<!ENTITY instructors.musicinfo.button.play "Spela">
+<!ENTITY instructors.musicinfo.button.down "Minska">
+<!ENTITY instructors.musicinfo.timer.tooltip "Tona ner musiken eller byt (Alt + Vanster / Hoger)">
+<!ENTITY instructors.musicinfo.update "Uppdatera spellista (Enter)">
+<!ENTITY instructors.musicinfo.bpm.up "Snabbare tempo (Upp)">
+<!ENTITY instructors.musicinfo.bpm.down "Langsammare tempo (Ner)">
+<!ENTITY instructors.musicinfo.genre.up "Byt genre (Vanster)">
+<!ENTITY instructors.musicinfo.genre.down "Byt genre (Hoger)">
+<!ENTITY instructors.musicinfo.time.up "Langre tid (Alt + Upp)">
+<!ENTITY instructors.musicinfo.time.down "Kortare tid (Alt + Ner)">
+<!ENTITY instructors.musicinfo.time.clear "Stoppa nedrakning (Alt + Ner till 0)">
+<!ENTITY instructors.musicinfo.remote "Visa fjarrkontroll">
+<!ENTITY instructors.musicinfo.minrating "Spela endast latar med detta betyg">

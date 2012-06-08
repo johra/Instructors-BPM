@@ -1,0 +1,12 @@
+#instructors-musicinfo-toolbar {
+  list-style-image: url('chrome://instructors/skin/toolbar.png');
+}
+#instructors-musicinfo-toolbar{
+	-moz-image-region:rect(0px 40px 40px 0px);
+}
+#instructors-musicinfo-toolbar:hover{
+	-moz-image-region:rect(40px 40px 80px 0px);
+}
+#instructors-musicinfo-toolbar:active{
+	-moz-image-region:rect(80px 40px 120px 0px);
+}

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE window SYSTEM "chrome://instructors/locale/overlay.dtd" >
+
+<?xml-stylesheet href="chrome://instructors/skin/overlay.css" type="text/css"?>
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+         id="instructors-overlay"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+         xmlns:xbl="http://www.mozilla.org/xbl">
+
+
+	<!-- Launch start script -->  
+	<script src="main.js"/>
+	
+	<!-- Start button in toolbar -->  
+	<hbox id="control_buttons_box">
+		<popupset>
+		  <menupopup id="instructors-musicinfo-toolbar-rmb">
+		    <menuitem label="Use selected playlist" command="instructors-startup-playlist-cmd"/>
+		  </menupopup>
+		</popupset>
+		<toolbarbutton id="instructors-musicinfo-toolbar" context="instructors-musicinfo-toolbar-rmb" class="sb-player-button" insertbefore="play_bwd_button" command="instructors-startup-cmd"/>
+	</hbox>
+	
+	<!-- Add startup command -->  
+	<commandset id="mainCommandSet">
+		<command id="instructors-startup-cmd"/>
+		<command id="instructors-startup-playlist-cmd"/>
+	</commandset>
+	
+	
+	
+  
+</overlay>
+

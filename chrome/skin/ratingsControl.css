@@ -1,0 +1,41 @@
+/** 
+*******************************************************************************
+RATINGS CONTROL
+chrome://instructors/skin/button-min-ratings.png
+-moz-image-region: rect(top, right, bottom, left);
+*******************************************************************************/
+
+#min-rating-box{
+-moz-box-align: center; 
+-moz-box-pack: center;
+}
+
+
+#min-rating-1,
+#min-rating-2,
+#min-rating-3,
+#min-rating-4,
+#min-rating-5
+{
+  list-style-image: url('chrome://instructors/skin/ratings.png');
+  -moz-image-region:rect(0px 18px 18px 0px);
+}
+#min-rating-1[value="1"],
+#min-rating-2[value="1"],
+#min-rating-3[value="1"],
+#min-rating-4[value="1"],
+#min-rating-5[value="1"]
+{
+  -moz-image-region:rect(36px 18px 54px 0px);  
+}
+#min-rating-1:hover,
+#min-rating-2:hover,
+#min-rating-3:hover,
+#min-rating-4:hover,
+#min-rating-5:hover
+{
+  -moz-image-region:rect(36px 18px 54px 0px);
+  
+}
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE prefwindow SYSTEM "chrome://instructors/locale/options.dtd">
+<!-- OPTIONS WINDOW - Specified in install.rdf, launched from the Extension Manager -->
+<prefwindow id="instructorsPreferences" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="&prefwindow.title;">
+  <prefpane id="pane1" label="&pane1.title;">
+    <preferences>      
+      <preference id="bpmrangepref" name="instructors-musicinfo.bpmrange" type="int"/>      
+      <preference id="fadeuptimepref" name="instructors-musicinfo.fadeup" type="int"/>      
+      <preference id="fadedowntimepref" name="instructors-musicinfo.fadedown" type="int"/>      
+      <preference id="fadetimepref" name="instructors-musicinfo.fadetime" type="int"/>      
+      <preference id="fastforwardtimepref" name="instructors-musicinfo.fastforwardtime" type="int"/>      
+      <preference id="minimumtrackspref" name="instructors-musicinfo.minimumtracks" type="int"/>      
+    </preferences>    
+    <label control="textintpref">&bpmrangepref.label;</label><textbox id="bpmrangepreftext" preference="bpmrangepref"/>    
+    <label control="textintpref">&fadeuppref.label;</label><textbox id="fadeuppreftext" preference="fadeuptimepref"/>    
+    <label control="textintpref">&fadedownpref.label;</label><textbox id="fadedownpreftext" preference="fadedowntimepref"/>    
+    <label control="textintpref">&fadetimepref.label;</label><textbox id="fadetimepreftext" preference="fadetimepref"/>    
+    <label control="textintpref">&fastforwardtimepref.label;</label><textbox id="fastforwardtimepreftext" preference="fastforwardtimepref"/>    
+    <label control="textintpref">&minimumtrackspref.label;</label><textbox id="minimumtrackspreftext" preference="minimumtrackspref"/>    
+  </prefpane>
+</prefwindow>

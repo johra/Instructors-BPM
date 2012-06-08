@@ -1,0 +1,146 @@
+@import url(ratingsControl.css);
+
+#instructors-musicinfo-table {
+  border-style:none;
+}
+#instructors-musicinfo-cell  {
+  border-style:solid;
+  border-width:1px;
+  border-color: #d4d2dd; 
+}
+#instructors-musicinfo-genre {
+  text-align: center;
+  font-size: 72px;
+  border-color: transparent;
+  background-color: transparent;
+  color: #d4d2dd;   
+}
+#instructors-musicinfo-bpm {
+  text-align: center;
+  font-size: 150px;
+  border-color: transparent;
+  background-color: transparent;
+  color: #d4d2dd;  
+}
+#instructors-musicinfo-maxtime {
+  text-align: center;
+  font-size: 72px;
+  color: #d4d2dd;  
+  border-color: transparent;
+  background-color: transparent;
+}
+#instructors-musicinfo-fullscreen-text {
+  text-align: center;  
+  font-size: 300px;
+  color: #d4d2dd; 
+}
+#instructors-musicinfo-loading-screen {
+  list-style-image: url('chrome://instructors/skin/icon-loading-large.png');     
+}
+#instructors-musicinfo-loading-screen[value="true"] {
+  visibility: visible !important;
+}
+#instructors-musicinfo-loading-screen[value="false"] {
+  visibility: collapse !important;
+}
+
+#instructors-musicinfo-row1 {
+  background-color: #36343f;
+}
+
+
+/*************************
+  Scroll up down buttons 
+*************************/
+#instructors-musicinfo-button-up {
+  list-style-image: url('chrome://instructors/skin/button-scroll-up.png');
+}
+#instructors-musicinfo-button-play {
+    list-style-image: url("chrome://instructors/skin/icon-link-playable.png");
+    opacity:0.6;
+}
+#instructors-musicinfo-button-clear {
+  list-style-image: url('chrome://instructors/skin/button-clear-search.png');
+}
+#instructors-musicinfo-button-down{
+  list-style-image: url('chrome://instructors/skin/button-scroll-down.png');  
+}
+#instructors-musicinfo-button-up,
+#instructors-musicinfo-button-clear,
+#instructors-musicinfo-button-down {
+	-moz-image-region:rect(0px 14px 14px 0px);
+}
+#instructors-musicinfo-button-up:hover,
+#instructors-musicinfo-button-clear:hover,
+#instructors-musicinfo-button-down:hover {
+	-moz-image-region:rect(14px 14px 28px 0px);
+}
+#instructors-musicinfo-button-play:hover {
+	opacity:1;
+}
+#instructors-musicinfo-button-up:active,
+#instructors-musicinfo-button-clear:active,
+#instructors-musicinfo-button-down:active {
+	-moz-image-region:rect(28px 14px 42px 0px);
+}
+#instructors-musicinfo-button-play:active {
+	opacity:0.5;
+}
+#instructors-musicinfo-button-up[disabled="true"],
+#instructors-musicinfo-button-play[disabled="true"],
+#instructors-musicinfo-button-down[disabled="true"] {
+	opacity:0.2;
+}
+
+
+
+/*************************
+  Toggle timer action: Next or Fade
+*************************/
+#instructors-musicinfo-timer-check{
+  list-style-image: url('chrome://instructors/skin/button-timer-next.png');  
+}
+#instructors-musicinfo-timer-check:hover{
+  list-style-image: url('chrome://instructors/skin/button-timer-next-hover.png');
+}
+#instructors-musicinfo-timer-check[value="1"] {
+  list-style-image: url("chrome://instructors/skin/button-timer-fade.png");
+}
+#instructors-musicinfo-timer-check[value="0"] {
+  list-style-image: url("chrome://instructors/skin/button-timer-next.png");
+}
+#instructors-musicinfo-timer-check[value="1"]:hover {
+  list-style-image: url("chrome://instructors/skin/button-timer-fade-hover.png");
+}
+#instructors-musicinfo-timer-check[value="0"]:hover {
+  list-style-image: url("chrome://instructors/skin/button-timer-next-hover.png");
+}
+#instructors-musicinfo-timer-check:active {
+  opacity:0.7;
+}
+
+
+
+/*************************
+  Remote control
+*************************/
+#instructors-musicinfo-remote-label {
+  text-align: center;
+  font-size: 64px;
+  border-color: transparent;
+  background-color: transparent;
+  color: #d4d2dd;   
+}
+#instructors-musicinfo-remote{
+  opacity:0.7;
+  list-style-image: url('chrome://instructors/skin/remote-control-small.png');  
+}
+#instructors-musicinfo-remote:hover{
+   opacity:1;
+}
+#instructors-musicinfo-remote-list{
+  text-align: left;
+  font-size: 24px;
+  color: #d4d2dd;  
+  border-color: transparent;	
+}

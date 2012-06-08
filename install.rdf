@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+     xmlns:songbird="http://www.songbirdnest.com/2007/addon-metadata-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>instructors@johra.se</em:id>
+    <em:type>2</em:type>
+    <em:name>Instructors</em:name>
+    <em:version>1.24</em:version>
+    <em:creator>Johan Ramstrom</em:creator>
+
+
+    <em:description>Show relevant music information for instructors, such as bpm, clock etc</em:description>
+
+
+
+
+
+    <em:optionsURL>chrome://instructors/content/options.xul</em:optionsURL>
+
+
+
+    <em:targetApplication>
+      <Description>
+        <em:id>songbird@songbirdnest.com</em:id>
+        <em:minVersion>1.8.0a</em:minVersion>
+        <em:maxVersion>1.10.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+     <!-- Register a pane to be displayed below the service sidebar.
+       See http://wiki.songbirdnest.com/Developer/Articles/Getting_Started/Display_Panes  -->
+    <songbird:displayPane>
+      <Description>
+        <songbird:contentTitle>Instructors</songbird:contentTitle>
+        <songbird:contentUrl>chrome://instructors/content/sidepane.xul</songbird:contentUrl>
+        <songbird:contentIcon>chrome://instructors/skin/pane-icon.png</songbird:contentIcon>
+        <songbird:defaultWidth>340</songbird:defaultWidth>
+        <songbird:defaultHeight>490</songbird:defaultHeight>
+        <songbird:suggestedContentGroups>sidebar</songbird:suggestedContentGroups>
+        <songbird:showOnInstall>true</songbird:showOnInstall>
+        <songbird:match>customType:instructors</songbird:match>
+      </Description>
+    </songbird:displayPane>
+
+  </Description>
+</RDF>

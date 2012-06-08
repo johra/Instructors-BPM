@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE prefwindow SYSTEM "chrome://instructors/locale/options.dtd">
+
+
+<!-- Include this to import the standard overlays for a window that does not contain a gBrowser element -->
+<?xul-overlay href="chrome://songbird/content/xul/layoutWithoutBrowserOverlay.xul"?>
+
+<page
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    id="track_editor"
+    title="Modify"
+    onload="window.metaData.onLoad();"
+    onunload="window.metaData.onUnload();"
+    windowtype="track_editor"
+    type="songbird"
+>
+<notificationbox id="trackeditor-notification" flex="1">
+<vbox flex="1">  
+	<label value="Genre"/>
+  <textbox
+		id="genre"		
+		property="genre"
+		type="autocomplete"
+		autocompletesearch="library-distinct-properties"/>
+	<label value="BPM"/>
+	<textbox
+		id="bpm"
+		property="bpm"
+		type="autocomplete"
+		autocompletesearch="library-distinct-properties"/>		 
+  <label value="Artist"/>
+	<textbox
+		id="artistName"
+		property="artistName"
+		type="autocomplete"
+		autocompletesearch="library-distinct-properties"/>
+	<label value="Track"/>
+	<textbox
+		id="trackName"
+		property="trackName"
+		type="autocomplete"
+		autocompletesearch="library-distinct-properties"/> 
+	<button label="OK" onclick="window.metaData.saveChanges()"/>
+  </vbox> 
+</notificationbox>
+<script type="application/javascript;version=1.8" src="modify-metadata.js"/>
+</page>

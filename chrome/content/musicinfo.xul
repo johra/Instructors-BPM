@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet href="chrome://global/skin" type="text/css"?>
+<?xml-stylesheet href="chrome://songbird/content/bindings/bindings.css" type="text/css"?>
+<?xml-stylesheet href="chrome://instructors/skin/musicinfo.css" type="text/css"?>
+
+<!DOCTYPE page SYSTEM "chrome://instructors/locale/overlay.dtd" >
+
+<page
+  id="instructors-musicinfo-page"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:rdf="http://www.w3.org/TR/WD-rdf-syntax#"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  onload="window.musicInfo.onLoad();"
+  onunload="window.musicInfo.onUnload();"
+  windowtype="Songbird:MediaPage"
+>
+
+<script type="application/x-javascript" src="musicinfo.js"/>
+
+<keyset id="instructors-musicinfo-keyset">	
+	<key id="previous-key" modifiers="accel" keycode="VK_LEFT" oncommand="songbird.previous();"/>
+  	<key id="next-key" modifiers="accel" keycode="VK_RIGHT" oncommand="songbird.next();"/>
+  	<key id="play-key" keycode="VK_BACKSPACE" oncommand="updatePlaylist();"/>
+	<key id="update-key" keycode="VK_RETURN" oncommand="updatePlaylist();"/>
+	<key id="genre-up-key" keycode="VK_LEFT" oncommand="updateGenre('up',true);"/>
+	<key id="genre-down-key" keycode="VK_RIGHT" oncommand="updateGenre('down',true);"/>	
+	<key id="bpm-up-key" keycode="VK_UP" oncommand="updateBpm('up',true);"/>
+	<key id="bpm-down-key" keycode="VK_DOWN" oncommand="updateBpm('down',true);"/>
+	<key id="timer-up-key" modifiers="alt" keycode="VK_UP" oncommand="updateMaxTime('up',true);"/>
+	<key id="timer-down-key" modifiers="alt" keycode="VK_DOWN" oncommand="updateMaxTime('down',true);"/>
+	<key id="timer-action-next-key" modifiers="alt" keycode="VK_LEFT" oncommand="updateMaxTimeAction(0,true);"/>
+	<key id="timer-action-fade-key" modifiers="alt" keycode="VK_RIGHT" oncommand="updateMaxTimeAction(1,true);"/>	
+	<key id="timer-action-toggle-key" modifiers="alt" keycode="VK_RETURN" oncommand="updateMaxTimeAction('null',true);"/>	
+	<key id="min-rating-up-key" modifiers="shift" keycode="VK_RIGHT" oncommand="updateMinRating('+',true);"/>	
+	<key id="min-rating-down-key" modifiers="shift" keycode="VK_LEFT" oncommand="updateMinRating('-',true);"/>	
+	<key id="track-rating-up-key" modifiers="shift" keycode="VK_UP" oncommand="updateTrackRating('+',true);"/>	
+	<key id="track-rating-down-key" modifiers="shift" keycode="VK_DOWN" oncommand="updateTrackRating('-',true);"/>
+	<key id="fast-forward-key" keycode="VK_PAGE_DOWN" oncommand="fastForward();"/>	
+	<key id="fast-rewind-key" keycode="VK_PAGE_UP" oncommand="fastRewind();"/>		
+</keyset>
+
+<popupset>
+  <menupopup id="instructors-musicinfo-bpm-popup">
+    <menuitem label="Modify" oncommand="modifyItem('bpm')"/>
+  </menupopup>
+</popupset>
+<popupset>
+  <menupopup id="instructors-musicinfo-genre-popup">
+    <menuitem label="Modify" oncommand="modifyItem('genre')"/>
+  </menupopup>
+</popupset>
+<popupset>
+  <menupopup id="instructors-musicinfo-track-popup">
+    <menuitem label="Modify" oncommand="modifyItem('trackName')"/>
+  </menupopup>
+</popupset>
+
+<grid flex="1" id="instructors-musicinfo-table">
+<columns>
+  <column flex="0"/>
+  <column flex="1"/>
+  <column flex="0"/>
+ </columns>
+  <rows>
+    <row align="center" flex="1" id="instructors-musicinfo-row1">
+      	<vbox>	      
+	        <toolbarbutton id="instructors-musicinfo-button-up" class="sb-player-button" oncommand="updateGenre('up',false)" tooltiptext="&instructors.musicinfo.genre.up;"/> 
+		<toolbarbutton id="instructors-musicinfo-button-play" class="sb-player-button" oncommand="updatePlaylist()" tooltiptext="&instructors.musicinfo.update;"/> 
+		<toolbarbutton id="instructors-musicinfo-button-down" class="sb-player-button" oncommand="updateGenre('down',false)" tooltiptext="&instructors.musicinfo.genre.down;"/> 		
+	</vbox>
+	<!--<text id="instructors-musicinfo-genre" flex="1" context="instructors-musicinfo-genre-popup" value="Bugg"/>-->
+     	<vbox flex="1">	
+	     	<!--<text flex="1" id="instructors-musicinfo-artist" crop="center" context="instructors-musicinfo-track-popup" value="Artist - Track"/> -->
+	     	<text id="instructors-musicinfo-genre" flex="1" context="instructors-musicinfo-genre-popup" value="Bugg"/>
+		<hbox flex="1" id="min-rating-box">				
+			<toolbarbutton id="min-rating-1" class="sb-player-button" value="0" oncommand="updateMinRating('1',false)" tooltiptext="&instructors.musicinfo.minrating;"/> 
+			<toolbarbutton id="min-rating-2" class="sb-player-button" value="0" oncommand="updateMinRating('2',false)" tooltiptext="&instructors.musicinfo.minrating;"/> 
+			<toolbarbutton id="min-rating-3" class="sb-player-button" value="0" oncommand="updateMinRating('3',false)" tooltiptext="&instructors.musicinfo.minrating;"/> 
+			<toolbarbutton id="min-rating-4" class="sb-player-button" value="0" oncommand="updateMinRating('4',false)" tooltiptext="&instructors.musicinfo.minrating;"/> 
+			<toolbarbutton id="min-rating-5" class="sb-player-button" value="0" oncommand="updateMinRating('5',false)" tooltiptext="&instructors.musicinfo.minrating;"/> 			
+		</hbox>			
+	</vbox>		
+    </row>
+    <row align="center" flex="1" id="instructors-musicinfo-row2">        
+        <vbox>	        
+	        <toolbarbutton id="instructors-musicinfo-button-up" class="sb-player-button" oncommand="updateBpm('up',false)" tooltiptext="&instructors.musicinfo.bpm.up;"/> 
+		<toolbarbutton id="instructors-musicinfo-button-play" class="sb-player-button" oncommand="updatePlaylist()" tooltiptext="&instructors.musicinfo.update;"/> 
+		<toolbarbutton id="instructors-musicinfo-button-down" class="sb-player-button" oncommand="updateBpm('down',false)" tooltiptext="&instructors.musicinfo.bpm.down;"/> 	
+        </vbox>        
+        <text id="instructors-musicinfo-bpm" flex="1" context="instructors-musicinfo-bpm-popup" value="150" type="number"/>
+     	<!--<text flex="1" id="instructors-musicinfo-clock" value="Clock"/>-->
+    </row>
+    <row align="center" flex="1" id="instructors-musicinfo-row1"> 
+	<vbox>
+       		<toolbarbutton id="instructors-musicinfo-button-up" class="sb-player-button" oncommand="updateMaxTime('up',false)" tooltiptext="&instructors.musicinfo.time.up;"/> 
+		<toolbarbutton id="instructors-musicinfo-button-clear" class="sb-player-button" oncommand="updateMaxTime('clear')" tooltiptext="&instructors.musicinfo.time.clear;"/> 
+		<toolbarbutton id="instructors-musicinfo-button-down" class="sb-player-button" oncommand="updateMaxTime('down',false)" tooltiptext="&instructors.musicinfo.time.down;"/> 
+		<toolbarbutton id="instructors-musicinfo-timer-check" class="sb-player-button" value="0" oncommand="updateMaxTimeAction('null',false)" tooltiptext="&instructors.musicinfo.timer.tooltip;"/> 
+       </vbox>
+       <text flex="1" id="instructors-musicinfo-maxtime" value="Timer" type="number"/>
+       <!--<text flex="1" id="instructors-musicinfo-trackInfo" value="0:00"/>-->
+       <toolbarbutton id="instructors-musicinfo-remote" class="sb-player-button" oncommand="remoteControl()" tooltiptext="&instructors.musicinfo.remote;"/> 
+    </row>  
+  </rows>
+</grid> 
+<hbox align="center" flex="1" id="instructors-musicinfo-fullscreen-table">
+<text flex="1" id="instructors-musicinfo-fullscreen-text" value="Fullscreen"/>
+<toolbarbutton flex="1" value="false" id="instructors-musicinfo-loading-screen" class="sb-player-button"/> 
+</hbox>	 
+</page>
